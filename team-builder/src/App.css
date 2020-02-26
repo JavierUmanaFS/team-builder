@@ -3,8 +3,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  /* font-size: 62.5%; */
-  font-size: 1rem ;
+  font-size: 1rem; 
 }
 
 .App {
@@ -19,9 +18,35 @@
   margin: 0 auto;
   align-items: center;
   justify-content: space-evenly;
-  font-size: 4rem;
 }
 
 .submitBtn{
   padding-top: 2rem;
+}
+
+.memberEdit{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: 20vh;
+  width: 50%;
+  margin: 0 auto;
+}
+
+.memberEdit button {
+  text-align: center;
+  margin: 0 auto;
+  width: 20%;
+  background-color: #999;
+  color: red;
+}
+
+.memberEdit h2{
+  font-size: 2rem;
+  color: #333;
+}
+
+.memberEdit button:hover {
+  color: white;
+  background-color: red;
 }

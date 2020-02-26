@@ -4,28 +4,45 @@ import './App.css';
 export const Form = props => {
   console.log(props)
   const [newMembers, setMembers] = useState({
-    title: '',
-    body: ''
-  })
+    name: '',
+    about: ''
+  });
+
+  const handleChanges = e => {
+    setMembers({
+      ...newMembers,
+      [e.target.name]: e.target.value
+    });
+  };
+
+  const submitForm = e => {
+    e.preventDefault();
+    props.addNewMember(newMembers);
+    setMembers({ name: '', about: '' });
+  };
 
   return (
     <div className='form'>
-      <form>
+      <form onSubmit={submitForm}>
         <div>
           <label htmlFor="name">New Member Name:{' '}</label>
         </div>
         <input
           id="name"
           type="text"
-          name="title"
+          name="name"
+          onChange={handleChanges}
+          value={newMembers.name}
         />
       </form>
-      <form>
+      <form onSubmit={submitForm}>
         <label htmlFor='aboutMember'>About New Member:{' '} </label>
         <div>
           <textarea
             id="aboutMember"
-            name="body"
+            name="about"
+            onChange={handleChanges}
+            value={newMembers.about}
           />
         </div>
         <div className='submitBtn'>
